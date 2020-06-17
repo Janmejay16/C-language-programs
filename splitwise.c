@@ -4,17 +4,22 @@ int main()
 {
     int i,p,q,n,avg;
     int sum=0;
-    printf("Enter total number of people : ");
+    printf("Enter total number of people : ");              //Total number of people
     scanf("%d",&n);
     int diffarr[n];
     int expense[n];
     char names[n][30];
 
+    
+// ----------------------------------------------------------
+//Details of people's names and amount shared
+// ----------------------------------------------------------
+    
     for(p=0;p<n;p++)
     {
         printf("Enter name of person %d :",p+1);
         fflush(stdin);
-        gets(names[p]);
+        gets(names[p]);                                    
     }
 
     system("cls");
@@ -22,9 +27,14 @@ int main()
     {
         printf("Enter contribution by person %d :",p+1);
         scanf("%d",&i);
-        expense[p] = i;
+        expense[p] = i;                                    
     }
 
+    
+    
+// --------------------------------------------------------------------------------------------------
+// Calculate total expense and average contribution and store the difference in a different array
+// --------------------------------------------------------------------------------------------------
     for(p=0;p<n;p++)
     {
         sum = sum + expense[p];
@@ -37,6 +47,14 @@ int main()
     {
         diffarr[p] = expense[p]-avg;
     }
+    
+    
+    
+// ---------------------------------------------------------------------------------------------------------
+// Final Logic to calculate contribution and amount to receive [and from whom] / lend [and to whom]
+// ---------------------------------------------------------------------------------------------------------
+    
+    
     printf("******************************RESULT******************************\n");
     initiate:
     for(p=0;p<n;p++)
